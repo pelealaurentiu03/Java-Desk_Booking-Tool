@@ -1,5 +1,4 @@
 # Java-Desk_Booking-Tool
-A Java-based Desk Booking Management System designed to optimize office space utilization through an intuitive reservation workflow
 
 I developed this application to address a common workplace challenge: managing shared office spaces efficiently. As a Master’s student in Big Data at the West University of Timișoara, I wanted to go beyond basic coding and build something that follows professional security and data management standards.
 
