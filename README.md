@@ -24,9 +24,15 @@ Instead of just focusing on the user interface, I spent a significant amount of 
 If you want to test this project on your machine, you will need to set up your own MongoDB cluster and generate Google Cloud API credentials.
 
 1. Clone this repository.
-2. Create a `.env` file in the root directory and add your variables:
+2. Create a `.env` file in the root directory and add your specific variables (use the template below):
    ```env
+   # Database Configuration
    MONGO_URI=your_mongodb_connection_string
+   DB_NAME=your_database_name
+
+   # Google OAuth 2.0 Configuration
    GOOGLE_CLIENT_ID=your_google_api_client_id
+   GOOGLE_CLIENT_SECRET=your_google_api_client_secret
+   REDIRECT_URI=http://localhost:your_port/your_endpoint
 3. Build the project using Maven: mvn clean install
 4. Run the application via AppLauncher.java.
