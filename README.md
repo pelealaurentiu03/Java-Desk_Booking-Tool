@@ -1,24 +1,32 @@
-# Java-Desk_Booking-Tool
+# Java Desk Booking Tool
 
-I developed this application to address a common workplace challenge: managing shared office spaces efficiently. As a Master’s student in Big Data at the West University of Timișoara, I wanted to go beyond basic coding and build something that follows professional security and data management standards.
+I developed this application to address a common workplace challenge: managing shared office spaces efficiently. Coming from an economics background and currently pursuing a Master's in Big Data, my goal was to go beyond basic coding and build a functional tool that respects professional security and data management standards.
 
-Why I built this?
-The goal was to create a production-ready desktop tool. Instead of just focusing on the UI, I spent a lot of time on the backend logic and how the app handles sensitive data.
+Instead of just focusing on the user interface, I spent a significant amount of time on the backend logic, data persistence, and how the app handles sensitive information.
 
-Google Authentication: I implemented GoogleAuthService.java because nobody wants to manage yet another set of credentials. Integrating the OAuth 2.0 flow was a great way to learn how modern apps handle user identity.
+## Key Features & Architecture
 
-Database Management with MongoDB: I chose MongoDB because its flexibility fits perfectly with the Big Data concepts I am currently studying.
+* **Google Authentication:** I implemented Google OAuth 2.0 (`GoogleAuthService`) because users prefer not to manage yet another set of passwords. It was also a great hands-on way to learn how modern applications handle identity verification.
+* **Database Management:** I chose MongoDB Atlas for this project. Its NoSQL flexibility fits perfectly with the data concepts I am currently studying.
+* **Automated Cleanup:** To keep the database optimized, I wrote a background function that automatically purges reservations older than 30 days.
+* **Security First:** I used Dotenv to manage all API keys and database connection strings. This ensures that sensitive information stays in a local `.env` file and is never pushed to the public repository.
+* **Activity Logging:** I included a custom server logging system (`server_logs`) to track backend activity and make troubleshooting easier.
 
-Automated Cleanup: To keep the system running smoothly, I added a cleanOldBookings function that automatically removes reservations older than 30 days.
+## Technical Stack
 
-Security and Privacy: I used Dotenv to handle all API keys and database strings. This ensures that sensitive information stays in a local .env file and is never exposed in the public code.
+* **Language:** Java 25
+* **Framework:** JavaFX
+* **Database:** MongoDB Atlas
+* **Dependency Management:** Maven
 
-The Technical Side:
+## How to run it locally
 
-Language: Java 17.
+If you want to test this project on your machine, you will need to set up your own MongoDB cluster and generate Google Cloud API credentials.
 
-Database: MongoDB Atlas (NoSQL).
-
-Dependencies: Managed through Maven.
-
-Logging: I included a server logging system (server_logs) to track activity and make troubleshooting much easier.
+1. Clone this repository.
+2. Create a `.env` file in the root directory and add your variables:
+   ```env
+   MONGO_URI=your_mongodb_connection_string
+   GOOGLE_CLIENT_ID=your_google_api_client_id
+3. Build the project using Maven: mvn clean install
+4. Run the application via AppLauncher.java.
